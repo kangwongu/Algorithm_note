@@ -1,0 +1,22 @@
+input = [4, 6, 2, 9, 1]
+
+
+def insertion_sort(array):
+    # 이 부분을 채워보세요!
+    # 처음값은 비교대상이 아니기에 0제외 1부터 시작
+    for i in range(1, len(array)):
+        for j in range(i):
+            # 앞 데이터가 뒤 데이터보다 크면 변경
+            if array[i-j-1] > array[i-j]:
+                array[i-j-1], array[i-j] = array[i-j], array[i-j-1]
+            # 앞 데이터가 뒤 데이터보다 크지 않으면 반복문을 돌 필요 없음 -> break
+            else:
+                break
+    return array
+
+insertion_sort(input)
+print(input) # [1, 2, 4, 6, 9] 가 되어야 합니다!
+
+print("정답 = [4, 5, 7, 7, 8] / 현재 풀이 값 = ",insertion_sort([5,8,4,7,7]))
+print("정답 = [-1, 3, 9, 17] / 현재 풀이 값 = ",insertion_sort([3,-1,17,9]))
+print("정답 = [-3, 32, 44, 56, 100] / 현재 풀이 값 = ",insertion_sort([100,56,-3,32,44]))
